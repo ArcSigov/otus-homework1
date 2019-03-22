@@ -4,8 +4,8 @@
 
 int main()
 {
-    std::cout << "build"  << version() << endl;
-	std::cout << "Hello, World!" << endl;
+    cout << "build"  << version() << endl;
+    cout << "Hello, World!" << endl;
 
     return 0;
 }
