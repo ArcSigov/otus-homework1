@@ -5,8 +5,6 @@ before_script:
 - sudo apt-get update
 - sudo apt install libboost-test-dev -y
 - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list.d/xenial.list
-- sudo apt update
-- sudo apt install libspdlog-dev -y
 script:
 - cmake .
 - cmake --build .
@@ -16,4 +14,4 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-  - curl -T helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uarcsigov:$BINTRAY_API_KEY "https://api.bintray.com/content/arcsigov/otus-homework/homework/$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  - curl -T helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uarcsigov:$BINTRAY_API_KEY "https://api.bintray.com/content/arcsigov/otus-homework/$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
