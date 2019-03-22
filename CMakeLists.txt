@@ -23,16 +23,16 @@ set_target_properties(test_version PROPERTIES
     INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
 
-target_link_libraries(helloworld_cli
-    helloworld
+target_link_libraries(${PROJECT_NAME}
+    lib${PROJECT_NAME}
 )
 
 target_link_libraries(test_version
     ${Boost_LIBRARIES}
-    helloworld
+    lib${PROJECT_NAME}
 )
 
-install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
+install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
